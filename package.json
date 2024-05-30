@@ -1,0 +1,24 @@
+{
+  "name": "@casto/streaming-server",
+  "version": "0.1.0",
+  "description": "Server for live video/audio transcoding in Casto",
+  "main": "dist/index.js",
+  "repository": "https://github.com/castoapp/streaming-server.git",
+  "author": "casto",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "yarn build && yarn start"
+  },
+  "dependencies": {
+    "@geckos.io/server": "^3.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.13",
+    "@typescript-eslint/parser": "^7.11.0",
+    "typescript": "^5.4.5"
+  }
+}
