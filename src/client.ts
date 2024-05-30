@@ -17,14 +17,25 @@ export default class StreamingClient {
     });
   }
 
+  /**
+   * Start the stream
+   * @param encoderConfig The encoder configuration
+   */
   async start(encoderConfig: EncoderConfig) {
     this.channel.emit('stream.start', encoderConfig);
   }
 
+  /**
+   * Send the packet data
+   * @param data Packet data
+   */
   async send(data: RawMessage) {
     this.channel.raw.emit(data);
   }
 
+  /**
+   * Stop the stream
+   */
   async stop() {
     this.channel.emit('stream.stop');
   }
