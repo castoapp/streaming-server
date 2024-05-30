@@ -1,6 +1,6 @@
 import { Data, geckos, GeckosServer, RawMessage, ServerChannel } from '@geckos.io/server';
 
-import type { EncoderConfig } from './types';
+import type { EncoderConfig } from './types.js';
 
 export default class StreamingServer {
   private io!: GeckosServer;
@@ -28,8 +28,17 @@ export default class StreamingServer {
   private startServer() {
     // Create a new geckos.io server
     this.io = geckos({
+      label: 'casto-streaming-server',
       multiplex: true,
       authorization: this.authorize.bind(this),
+      iceServers: [
+        {
+          urls: 'stun:stun.l.google.com:19302',
+        },
+      ],
+      cors: {
+        origin: '*',
+      },
     });
 
     // Listen for new connections

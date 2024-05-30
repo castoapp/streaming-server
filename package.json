@@ -13,6 +13,7 @@
     "dev": "yarn build && yarn start"
   },
   "dependencies": {
+    "@geckos.io/client": "^3.0.0",
     "@geckos.io/server": "^3.0.0",
     "dotenv": "^16.4.5"
   },
