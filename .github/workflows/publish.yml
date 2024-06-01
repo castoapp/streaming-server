@@ -23,6 +23,8 @@ jobs:
           node-version: 18
       - run: yarn
       - run: yarn build
+      - run: |
+          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> ./.npmrc
       - run: npm publish
         working-directory: ./
         env:
