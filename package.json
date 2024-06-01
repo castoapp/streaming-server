@@ -1,6 +1,6 @@
 {
   "name": "casto-streaming-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Server for live video/audio transcoding in Casto",
   "main": "dist/index.js",
   "repository": "https://github.com/castoapp/streaming-server.git",
