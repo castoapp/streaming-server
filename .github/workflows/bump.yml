@@ -1,0 +1,27 @@
+name: Bump
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  version-bump:
+    name: Bump
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v2'
+        with:
+          ref: ${{ github.ref }}
+      - name: 'cat package.json'
+        run: cat ./package.json
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        id: version-bump
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          target-branch: 'main'
+          minor-wording: 'feat,add,Adds,new'
+          commit-message: 'CI: bumps version to {{version}} [skip ci]'

@@ -1,0 +1,10 @@
+node_modules
+tests
+.vscode
+.github
+icon.png
+README.md
+.env.example
+.prettierrc.json
+tsconfig.json
+.eslintrc.js
